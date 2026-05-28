@@ -1,0 +1,24 @@
+# dante-monitor configuration
+# Copy this file to config.yaml and edit as needed
+
+network:
+  subnet: "192.168.1.0/24"     # Your Dante network subnet
+  poll_interval: 5              # Seconds between status polls
+  discovery_timeout: 5          # Seconds to wait during mDNS discovery
+
+alerts:
+  enabled: false                # Set to true to enable alerts
+  offline_threshold: 10         # Seconds before a device is marked offline
+  email: ""                     # Alert email address (leave blank to disable)
+  webhook_url: ""               # Slack/Teams webhook URL (leave blank to disable)
+  smtp:
+    host: "smtp.gmail.com"
+    port: 587
+    tls: true
+    from: "dante-monitor@yourdomain.com"
+    username: ""
+    password: ""
+
+web:
+  host: "0.0.0.0"
+  port: 5000
